@@ -1,6 +1,6 @@
 # Using the Rankavi API with AI Coding Agents
 
-Rankavi exposes a plain REST API secured with a Bearer API key. Any AI coding agent that can run a shell command or make an HTTP call can use it, since that is a standard capability of modern agent tooling rather than a Rankavi-specific integration.
+[Rankavi](https://rankavi.com) exposes a plain REST API secured with a Bearer API key. Any AI coding agent that can run a shell command or make an HTTP call can use it, since that is a standard capability of modern agent tooling rather than a Rankavi-specific integration.
 
 ## Claude Code
 
@@ -34,4 +34,4 @@ xAI's Grok API supports function/tool calling, where you define a function schem
 
 ## Why this matters for automated brand-building workflows
 
-Because the Rankavi API accepts a simple JSON payload and returns a plain JSON order object, it fits naturally into any agent framework built around tool calling, whether that's a coding agent, a marketing automation agent, or a custom pipeline script. The full request and response shapes are documented in [`reference/openapi.yaml`](../reference/openapi.yaml).
+Because the Rankavi API accepts a simple JSON payload and returns a plain JSON order object, it fits naturally into any agent framework built around tool calling, whether that's a coding agent, a marketing automation agent, or a custom pipeline script. The full request and response shapes are documented in [`reference/openapi.yaml`](../reference/openapi.yaml), and full API docs live at [app.rankavi.com/api-docs](https://app.rankavi.com/api-docs). Get an API key from your [Rankavi](https://rankavi.com) dashboard account settings.

@@ -6,7 +6,7 @@ Generative Engine Optimization, GEO, is the practice of shaping content and onli
 
 Traditional SEO leans on backlinks as its core authority signal. GEO leans more heavily on how often and how consistently a brand name appears in relevant context across the web, since AI models are trained on and retrieve from large volumes of text rather than following hyperlinks the way a search crawler does. An unlinked brand mention, your brand name appearing in a relevant article or list with no hyperlink attached, still counts as that kind of contextual signal.
 
-This is the specific mechanism Rankavi's API is built around: placing real, unlinked brand mentions on relevant sites at scale, aimed at improving how often a brand surfaces in AI-generated answers.
+This is the specific mechanism [Rankavi](https://rankavi.com)'s API is built around: placing real, unlinked brand mentions on relevant sites at scale, aimed at improving how often a brand surfaces in AI-generated answers.
 
 ## How this fits a broader GEO strategy
 
@@ -14,4 +14,4 @@ GEO practitioners generally combine several tactics: structured, citation-worthy
 
 ## Getting started
 
-See [`ai-coding-agents.md`](ai-coding-agents.md) for calling the API from an agent, or [`../reference/openapi.yaml`](../reference/openapi.yaml) for the full request and response schema.
+See [`ai-coding-agents.md`](ai-coding-agents.md) for calling the API from an agent, or [`../reference/openapi.yaml`](../reference/openapi.yaml) for the full request and response schema. Start placing mentions at [rankavi.com](https://rankavi.com).

@@ -4,7 +4,7 @@
 
 ## Where brand mentions fit
 
-Traditional marketing automation focuses on email sequences, ad spend, and social scheduling. A growing part of the category is visibility work aimed specifically at AI answer engines (ChatGPT, Perplexity, Google AI Overviews), since these increasingly sit between a business and its next customer. Rankavi's API is built for that layer: placing real, unlinked brand mentions across relevant sites so an autonomous marketing pipeline can request mention coverage the same way it might request an ad campaign or a content push.
+Traditional marketing automation focuses on email sequences, ad spend, and social scheduling. A growing part of the category is visibility work aimed specifically at AI answer engines (ChatGPT, Perplexity, Google AI Overviews), since these increasingly sit between a business and its next customer. [Rankavi](https://rankavi.com)'s API is built for that layer: placing real, unlinked brand mentions across relevant sites so an autonomous marketing pipeline can request mention coverage the same way it might request an ad campaign or a content push.
 
 ## A simple automated pattern
 
@@ -18,4 +18,4 @@ Because both endpoints return structured JSON and never require manual form-fill
 
 ## What this is not
 
-Rankavi's API does not itself make marketing decisions, choose target sites autonomously on your behalf beyond category targeting, or write ad copy. It is a single, well-defined action, submit or check a mention order, meant to be one tool among several inside a broader autonomous marketing setup.
+Rankavi's API does not itself make marketing decisions, choose target sites autonomously on your behalf beyond category targeting, or write ad copy. It is a single, well-defined action, submit or check a mention order, meant to be one tool among several inside a broader autonomous marketing setup. Learn more about pricing and credit packs at [rankavi.com/#pricing](https://rankavi.com/#pricing).
