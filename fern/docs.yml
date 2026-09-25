@@ -1,0 +1,26 @@
+instances:
+  - url: rankavi.docs.buildwithfern.com
+
+title: Rankavi Documentation
+
+navbar-links:
+  - type: minimal
+    text: Rankavi
+    url: https://rankavi.com
+  - type: filled
+    text: See Pricing
+    url: https://rankavi.com/#pricing
+
+navigation:
+  - page: Welcome
+    path: docs/pages/welcome.mdx
+  - section: Guides
+    contents:
+      - page: AI Coding Agents
+        path: docs/pages/ai-coding-agents.mdx
+      - page: Autonomous Marketing
+        path: docs/pages/autonomous-marketing.mdx
+      - page: GEO and AEO
+        path: docs/pages/geo-and-aeo.mdx
+  - api: API Reference
+    path: ../reference/openapi.yaml
