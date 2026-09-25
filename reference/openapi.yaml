@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: Rankavi API
+  version: "1.0.0"
+  description: >
+    The Rankavi API lets you submit unlinked brand mention orders and check
+    available categories programmatically. Rankavi places real, unlinked
+    brand mentions on relevant websites, helping brands get cited by name
+    in AI answer engines like ChatGPT, Perplexity, and Google AI Overviews.
+  contact:
+    name: Rankavi
+    url: https://rankavi.com
+  license:
+    name: Proprietary
+servers:
+  - url: https://app.rankavi.com/api/v1
+    description: Production
+security:
+  - bearerAuth: []
+tags:
+  - name: Mentions
+    description: Submit and manage brand mention orders
+  - name: Categories
+    description: Browse available mention categories
+paths:
+  /mentions:
+    post:
+      operationId: createMention
+      summary: Submit a mention order
+      description: >
+        Submits a new brand mention order against your account's available
+        credits. The response never includes the destination URL where your
+        mention was placed; placements are confirmed and revealed inside
+        your dashboard once live.
+      tags: [Mentions]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateMentionRequest"
+      responses:
+        "200":
+          description: Order accepted
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateMentionResponse"
+        "401":
+          description: Missing or invalid API key
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "402":
+          description: No remaining credits
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "422":
+          description: Missing or malformed field
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /categories:
+    get:
+      operationId: listCategories
+      summary: List available categories
+      description: Returns the list of categories you can target with an order. No authentication required.
+      tags: [Categories]
+      security: []
+      responses:
+        "200":
+          description: A list of categories
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CategoriesResponse"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Your Rankavi API key, found in dashboard account settings.
+  schemas:
+    CreateMentionRequest:
+      type: object
+      required: [brand_name, category_id, target_url]
+      properties:
+        brand_name:
+          type: string
+          example: Acme Coffee Roasters
+        category_id:
+          type: string
+          example: coffee-and-beverage
+        target_url:
+          type: string
+          format: uri
+          example: https://acmecoffee.com
+        notes:
+          type: string
+          example: Prefer mentions on roundup and comparison articles
+    CreateMentionResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        order:
+          $ref: "#/components/schemas/Order"
+    Order:
+      type: object
+      properties:
+        id:
+          type: string
+          example: ord_1a2b3c
+        status:
+          type: string
+          enum: [pending, revealed]
+        credits_used:
+          type: integer
+          example: 1
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    CategoriesResponse:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: "#/components/schemas/Category"
+    ErrorResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: string
